@@ -3,144 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - PD Enterprise</title>
+    <title>Contact Us</title>
     <style>
         body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #282c34;
-            color: white;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
         }
 
-        h1 {
-            font-size: 4rem;
-            margin: 20px 0;
-            color: #ff69b4; /* Pink */
-            text-shadow: 0 0 10px rgba(255, 105, 180, 1); /* Increased opacity */
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin: 10px 0;
-            color: #61dafb;
-        }
-
-        p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.5;
-        }
-
-        .info {
-            margin: 20px 0;
+        header {
+            background-color: #000;
+            color: #fff;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .links {
+            text-align: center;
             display: flex;
-            justify-content: center;
-            margin: 20px 0;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .link {
-            margin: 0 15px;
-            color: #ff69b4; /* Pink */
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-
-        .link:hover {
-            color: #ff1493; /* Darker Pink */
-        }
-
-        .neon {
-            position: absolute;
-            pointer-events: none;
-            width: 30px; /* Adjust size as needed */
-            height: 30px; /* Adjust size as needed */
-            border-radius: 50%;
-            background: rgba(255, 105, 180, 0.9); /* Increased opacity */
-            filter: blur(8px);
-            transition: transform 0.1s;
-        }
-
-        .trail {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 105, 180, 0.6); /* Trail color */
-            filter: blur(10px);
-            pointer-events: none;
+        .logo-container {
+            margin-right: 20px;
         }
 
         .logo {
-            width: 150px; /* Adjust the size as needed */
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
             margin-bottom: 20px;
+            border: 1px solid #ccc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"] {
+            padding-left: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #444;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            clear: both;
+        }
+
+        .neon {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background-color: #39ff14;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .neon::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            background-color: #39ff14;
+            border-radius: 50%;
+            opacity: 0.5;
+            transition: opacity 0.5s;
+        }
+
+        .neon:hover::after {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <div class="neon" id="neon"></div>
-    <div class="trail" id="trail"></div>
-
-    <main>
-        <img src="path_to_logo.png" alt="PD Enterprise Logo" class="logo"> <!-- Placeholder for logo -->
-        <h1>PD Enterprise</h1>
-        <h2>Empowering Students with Innovative Tools</h2>
-        
-        <div class="info">
-            <p>
-                At PD Enterprise, we specialize in creating cutting-edge tools specifically designed for students. Our goal is to facilitate a more efficient and enjoyable learning experience through innovative technology.
-            </p>
-            <p>
-                We understand the unique challenges that students face in their academic journeys. That's why our products are crafted to help with organization, collaboration, and study techniques, ensuring that every student can maximize their potential.
-            </p>
-            <p>
-                Our flagship products include:
-                <ul>
-                    <li><strong>Grade App:</strong> An NCERT-based question AI solution provider for your homework, helping you understand and solve complex problems effortlessly.</li>
-                    <li><strong>CNotes:</strong> A collaborative note-taking app that allows students to share and organize their study materials.</li>
-                </ul>
-            </p>
-            <p>
-                Join us on our mission to revolutionize the educational experience with tools that inspire and empower. Together, we can make learning accessible, fun, and productive.
-            </p>
+    <header>
+        <div class="logo-container">
+            <!-- Add your logo here -->
+            <img src="logo.png" alt="Logo" width="50" height="50">
         </div>
-
-        <div class="links">
-            <a class="link" href="https://grade-app.com" target="_blank">Grade App</a>
-            <a class="link" href="https://cnotes.com" target="_blank">CNotes</a>
-        </div>
-    </main>
-
+        <div class="logo">PD ENTERPRICE</div>
+        <h1>Contact Us</h1>
+    </header>
+    <section>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
+            <label for="phone">Phone (optional):</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Enter your message"></textarea><br><br>
+            <input type="submit" value="Send">
+        </form>
+    </section>
+    <footer>
+        <p>Phone: 123-456-7890</p>
+        <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+    </footer>
+    <div class="neon"></div>
     <script>
-        const neon = document.getElementById('neon');
-        const trail = document.getElementById('trail');
+        const neon = document.querySelector('.neon');
 
-        document.addEventListener('mousemove', (event) => {
-            neon.style.left = `${event.clientX}px`;
-            neon.style.top = `${event.clientY}px`;
-            trail.style.left = `${event.clientX}px`;
-            trail.style.top = `${event.clientY}px`;
-            trail.style.width = '50px'; // Adjust trail size
-            trail.style.height = '50px'; // Adjust trail size
-            trail.style.transform = `translate(-50%, -50%)`; // Center trail
+        document.addEventListener('mousemove', (e) => {
+            neon.style.top = e.clientY - 25 + 'px';
+            neon.style.left = e.clientX - 25 + 'px';
         });
 
-        document.addEventListener('mouseleave', () => {
-            trail.style.width = '0';
-            trail.style.height = '0';
+        document.addEventListener('scroll', () => {
+            neon.style.top = '50%';
+            neon.style.left = '50%';
         });
     </script>
 </body>
