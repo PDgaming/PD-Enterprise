@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - PD Enterprise</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #282c34;
+            color: white;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 20px 0;
+            color: #ff69b4; /* Pink */
+            text-shadow: 0 0 10px rgba(255, 105, 180, 1); /* Increased opacity */
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 10px 0;
+            color: #61dafb;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .info {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .link {
+            margin: 0 15px;
+            color: #ff69b4; /* Pink */
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .link:hover {
+            color: #ff1493; /* Darker Pink */
+        }
+
+        .neon {
+            position: absolute;
+            pointer-events: none;
+            width: 30px; /* Adjust size as needed */
+            height: 30px; /* Adjust size as needed */
+            border-radius: 50%;
+            background: rgba(255, 105, 180, 0.9); /* Increased opacity */
+            filter: blur(8px);
+            transition: transform 0.1s;
+        }
+
+        .trail {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 105, 180, 0.6); /* Trail color */
+            filter: blur(10px);
+            pointer-events: none;
+        }
+
+        .logo {
+            width: 150px; /* Adjust the size as needed */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="neon" id="neon"></div>
+    <div class="trail" id="trail"></div>
+
+    <main>
+        <img src="path_to_logo.png" alt="PD Enterprise Logo" class="logo"> <!-- Placeholder for logo -->
+        <h1>PD Enterprise</h1>
+        <h2>Empowering Students with Innovative Tools</h2>
+        
+        <div class="info">
+            <p>
+                At PD Enterprise, we specialize in creating cutting-edge tools specifically designed for students. Our goal is to facilitate a more efficient and enjoyable learning experience through innovative technology.
+            </p>
+            <p>
+                We understand the unique challenges that students face in their academic journeys. That's why our products are crafted to help with organization, collaboration, and study techniques, ensuring that every student can maximize their potential.
+            </p>
+            <p>
+                Our flagship products include:
+                <ul>
+                    <li><strong>Grade App:</strong> An NCERT-based question AI solution provider for your homework, helping you understand and solve complex problems effortlessly.</li>
+                    <li><strong>CNotes:</strong> A collaborative note-taking app that allows students to share and organize their study materials.</li>
+                </ul>
+            </p>
+            <p>
+                Join us on our mission to revolutionize the educational experience with tools that inspire and empower. Together, we can make learning accessible, fun, and productive.
+            </p>
+        </div>
+
+        <div class="links">
+            <a class="link" href="https://grade-app.com" target="_blank">Grade App</a>
+            <a class="link" href="https://cnotes.com" target="_blank">CNotes</a>
+        </div>
+    </main>
+
+    <script>
+        const neon = document.getElementById('neon');
+        const trail = document.getElementById('trail');
+
+        document.addEventListener('mousemove', (event) => {
+            neon.style.left = `${event.clientX}px`;
+            neon.style.top = `${event.clientY}px`;
+            trail.style.left = `${event.clientX}px`;
+            trail.style.top = `${event.clientY}px`;
+            trail.style.width = '50px'; // Adjust trail size
+            trail.style.height = '50px'; // Adjust trail size
+            trail.style.transform = `translate(-50%, -50%)`; // Center trail
+        });
+
+        document.addEventListener('mouseleave', () => {
+            trail.style.width = '0';
+            trail.style.height = '0';
+        });
+    </script>
+</body>
+</html>
