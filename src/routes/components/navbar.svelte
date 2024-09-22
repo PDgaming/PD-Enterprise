@@ -64,7 +64,7 @@
         >
       </li>
       <li>
-        <a href="#contact">Contact</a>
+        <a href="#contact-us">Contact Us</a>
       </li>
     </ul>
   </div>
