@@ -43,8 +43,8 @@
         <a href="#about-us">About Us</a>
       </li>
       <li>
-        <a href="#products"
-          >Products<span
+        <div>
+          Products<span
             ><svg
               width="29"
               height="29"
@@ -60,8 +60,8 @@
                 stroke-linejoin="round"
               />
             </svg></span
-          ></a
-        >
+          >
+        </div>
       </li>
       <li>
         <a href="#contact-us">Contact Us</a>
