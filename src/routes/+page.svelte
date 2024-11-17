@@ -1,6 +1,7 @@
 <script lang="ts">
   import Navbar from "./components/navbar.svelte";
   import Footer from "./components/footer.svelte";
+  import aboutUsImage from "./images/students-studying-image.jpg";
 </script>
 
 <svelte:head>
@@ -28,9 +29,8 @@
             class="btn btn-primary loginButton"
             href="https://grade-app.pages.dev">Explore Grade App</a
           >
-          <a
-            class="btn btn-primary registerButton"
-            href="https://cnotes.pages.dev">Learn More About Cnotes</a
+          <a class="btn btn-primary registerButton" href="/blog"
+            >Check out our Blog</a
           >
         </div>
       </div>
@@ -45,31 +45,39 @@
       </h7>
     </div>
     <div class="body">
-      <p>
-        We understand the challenges students face because we've been there
-        ourselves. Founded by a student who experienced the struggles of
-        juggling classes, studying effectively, and staying organized, PD
-        Enterprise is dedicated to creating innovative tools that empower
-        students to reach their full potential.
-      </p>
-      <div class="cards">
-        <div class="card">
-          <div class="card-content">
-            <h3>Our Mission</h3>
-            <p>
-              We believe every student deserves access to resources that make
-              learning engaging, efficient, and collaborative.
-            </p>
+      <div class="about-content">
+        <div class="text-content">
+          <p>
+            We understand the challenges students face because we've been there
+            ourselves. Founded by a student who experienced the struggles of
+            juggling classes, studying effectively, and staying organized, PD
+            Enterprise is dedicated to creating innovative tools that empower
+            students to reach their full potential.
+          </p>
+          <div class="cards">
+            <div class="card">
+              <div class="card-content">
+                <h3>Our Mission</h3>
+                <p>
+                  We believe every student deserves access to resources that
+                  make learning engaging, efficient, and collaborative.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-content">
+                <h3>Our Vision</h3>
+                <p>
+                  To be the leading provider of student-focused software,
+                  transforming the way students learn and achieve academic
+                  success.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-content">
-            <h3>Our Vision</h3>
-            <p>
-              To be the leading provider of student-focused software,
-              transforming the way students learn and achieve academic success.
-            </p>
-          </div>
+        <div class="about-us-image">
+          <img src={aboutUsImage} alt="About Us" />
         </div>
       </div>
     </div>
@@ -107,36 +115,59 @@
 </div>
 
 <style>
+  .title {
+    max-width: 50%;
+  }
+  .about-content {
+    display: flex;
+    gap: 10rem;
+    align-items: flex-start;
+    width: 97vw;
+  }
+  .text-content {
+    flex: 1;
+    max-width: 50%;
+  }
+  .about-us-image {
+    flex: 1;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(252, 207, 207, 0.726);
+  }
+  .about-us-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
   .email-container {
     display: flex;
     align-items: center;
   }
-
   .email-icon {
     margin-right: 10px;
   }
-
   .email-icon svg {
     width: 25px;
     height: 25px;
     fill: currentColor; /* This will make the SVG inherit the text color */
   }
-
   .email-text {
     font-size: 0.7em;
     margin: 0;
   }
   .cards {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    gap: 1rem;
   }
   .card {
-    width: 325px;
+    flex: 1;
+    min-width: 350px;
+    max-width: 400px;
+    margin: 0;
     overflow: hidden;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
   }
   .card-content h3 {
     font-size: 1em;
@@ -208,5 +239,33 @@
   }
   h8 {
     font-size: 5em;
+  }
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+    }
+
+    .about-us-image {
+      width: 100%;
+      max-width: 100%;
+    }
+    .cards {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .card {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 1024px) {
+    .about-content {
+      flex-direction: column;
+    }
+
+    .about-us-image {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 </style>
