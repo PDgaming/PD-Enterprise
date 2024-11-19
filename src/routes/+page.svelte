@@ -1,6 +1,4 @@
 <script lang="ts">
-  import Navbar from "./components/navbar.svelte";
-  import Footer from "./components/footer.svelte";
   import aboutUsImage from "./images/students-studying-image.jpg";
 </script>
 
@@ -9,7 +7,6 @@
 </svelte:head>
 
 <div class="main">
-  <Navbar />
   <div class="hero min-h-screen">
     <div class="hero-content flex-col lg:flex-row-reverse">
       <div id="home">
@@ -111,7 +108,6 @@
     </div>
   </div>
   <hr />
-  <Footer />
 </div>
 
 <style>

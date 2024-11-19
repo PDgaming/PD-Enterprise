@@ -1,8 +1,10 @@
 <script lang="ts">
   import logo from "../images/logo.png"; //imports logo image from images
+
+  let isDropdownOpen: boolean = false;
 </script>
 
-<div class="navbar bg-base-200">
+<button class="navbar bg-base-200">
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -43,7 +45,11 @@
         <a href="#about-us">About Us</a>
       </li>
       <li>
-        <div>
+        <button
+          class="flex items-center"
+          on:click={() => (isDropdownOpen = !isDropdownOpen)}
+          on:mouseenter={() => (isDropdownOpen = true)}
+        >
           Products<span
             ><svg
               width="29"
@@ -61,18 +67,33 @@
               />
             </svg></span
           >
-        </div>
+        </button>
+        {#if isDropdownOpen}
+          <div
+            class="dropdown-container"
+            style="display: {isDropdownOpen ? 'block' : 'none'}"
+            on:mouseleave={() => (isDropdownOpen = false)}
+          >
+            <div class="bg-base-100 rounded-box z-[1] mt-3 shadow">
+              <li><a href="https://grade-ai.pages.dev">Grade-AI</a></li>
+              <li><a href="https://cnotes.pages.dev">Cnotes</a></li>
+            </div>
+          </div>
+        {/if}
       </li>
       <li>
         <a href="#contact-us">Contact Us</a>
       </li>
     </ul>
   </div>
-</div>
+</button>
 
 <style>
   :root {
     --image-size: 70px;
+  }
+  .navbar {
+    cursor: default;
   }
   #navbar-logo {
     width: var(--image-size);
@@ -80,5 +101,19 @@
     cursor: pointer;
     margin-bottom: 10px;
     filter: brightness(0) invert(1);
+  }
+  .dropdown-container {
+    position: absolute;
+    top: 50%; /* Position below the Products button */
+  }
+  /* Style for the dropdown content */
+  .dropdown-content {
+    background-color: white;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  /* Show the dropdown content when isDropdownOpen is true */
+  .dropdown-content[aria-expanded="true"] {
+    display: block;
   }
 </style>
