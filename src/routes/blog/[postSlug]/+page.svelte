@@ -89,6 +89,5 @@
     margin: 15px;
     padding: 10px;
     min-width: 300px;
-    cursor: pointer;
   }
 </style>
